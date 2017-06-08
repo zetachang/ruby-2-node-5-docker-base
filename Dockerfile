@@ -43,3 +43,7 @@ RUN echo "deb http://www.deb-multimedia.org jessie main non-free" >> /etc/apt/so
      apt-get -y --force-yes install deb-multimedia-keyring && \
      apt-get update && \
      apt-get -y install ffmpeg
+     
+# Install git (in case some gem is not published on rubygems.org)
+RUN apt-get update && apt-get install -y git
+
