@@ -18,13 +18,13 @@ RUN curl -L https://github.com/rbenv/ruby-build/archive/v20160426.tar.gz -o ruby
   ruby-build-20160426/install.sh &&\
   rm -rf ruby-build-20160426
 
-# Install Ruby 2.1.10 and Bundler
-RUN /usr/local/bin/ruby-build 2.1.10 /opt/ruby-2.1.10
-RUN /opt/ruby-2.1.10/bin/gem install bundler
+# Install Ruby 2.2.10 and Bundler
+RUN /usr/local/bin/ruby-build 2.2.10 /opt/ruby-2.2.10
+RUN /opt/ruby-2.2.10/bin/gem install bundler
 
 # set up path for all users
-ENV PATH /opt/ruby-2.1.10/bin:$PATH
-RUN echo "PATH=/opt/ruby-2.1.10/bin:$PATH" >> /etc/profile
+ENV PATH /opt/ruby-2.2.10/bin:$PATH
+RUN echo "PATH=/opt/ruby-2.2.10/bin:$PATH" >> /etc/profile
 
 # Install all required utility package
 RUN apt-get update -qq && \
